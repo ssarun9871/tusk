@@ -20,9 +20,19 @@ var addItems = document.getElementsByClassName('title')
 addItems[0].style.fontWeight = 'bold';
 addItems[0].style.color = 'green';
 
-var items = document.getElementsByClassName('list-group-item');
-items[2].style.backgroundColor = 'green';
 
-for(let i =0;i<items.length;i++){
-    items[i].style.fontWeight ='bold';
+//by ClassName
+// var items = document.getElementsByClassName('list-group-item');
+// items[2].style.backgroundColor = 'green';
+
+// for(let i =0;i<items.length;i++){
+//     items[i].style.fontWeight ='bold';
+// }
+
+//by TagName
+var li = document.getElementsByTagName('li');
+li[2].style.backgroundColor = 'green';
+
+for(let i =0;i<li.length;i++){
+    li[i].style.fontWeight ='bold';
 }
