@@ -36,3 +36,18 @@ li[2].style.backgroundColor = 'green';
 for(let i =0;i<li.length;i++){
     li[i].style.fontWeight ='bold';
 }
+
+//by querySelector
+var item2 = document.querySelector('.list-group-item:nth-child(2)');
+item2.style.backgroundColor = 'green';
+
+var item3 = document.querySelector('.list-group-item:nth-child(3)');
+item3.style.display = 'none';
+
+//by querySelectorAll
+var listGroupItem  = document.querySelectorAll('.list-group-item');
+listGroupItem[1].style.color = 'green'; 
+
+for(let i=1;i<listGroupItem.length;i+=2){
+   listGroupItem[i].style.color = 'green';
+}
