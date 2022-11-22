@@ -14,10 +14,30 @@ function addData() {
     };
     
     let myObj_serialized = JSON.stringify(obj);
-    localStorage.setItem("moObj",myObj_serialized);
+    localStorage.setItem(email,myObj_serialized);
     // localStorage.setItem('Nam', name);
     // localStorage.setItem('Email', email);
     // localStorage.setItem('Phone', phone);
 }
+
+ 
+ for(let i=0;i<localStorage.length;i++){
+    let key=localStorage.key(i);
+    let data = localStorage.getItem(key);
+    let dataName = JSON.parse(data).name;
+
+    var user = document.createElement('li');
+    var text = document.createTextNode(dataName);
+
+    user.appendChild(text);
+    console.log(user);
+    let target = document.querySelector('.usersList');
+    
+    target.appendChild(user);
+
+ }
+  
+
+
 
 
