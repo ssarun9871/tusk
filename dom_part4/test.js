@@ -75,6 +75,8 @@ function addItem(e) {
     itemList.appendChild(li);
    
 
+    localStorage.setItem(newItem1,newItem2);
+
 }
 
 
