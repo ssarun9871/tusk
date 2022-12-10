@@ -17,7 +17,25 @@ function addData(e) {
         email : email,
         phone : phone
     };
-    console.log(obj);
+
     axios.post('https://crudcrud.com/api/0ac2bdeff0054dc987b4aeca8347eb3d/data',obj)
 
 }
+
+window.addEventListener("DOMContentLoaded",()=>{
+    axios.get('https://crudcrud.com/api/0ac2bdeff0054dc987b4aeca8347eb3d/data')
+    .then((res)=>{
+        for(let i=0;i<res.data.length;i++){
+            dataName = res.data[i].name;
+            dataEmail = res.data[i].email;
+            var li = `<li id="${dataEmail}">${dataName} <button  onClick="deleteuser('${dataEmail}')">delete</button>
+            <button onClick="updateUser('${dataEmail}')">edit</button></li>`;
+            let target = document.querySelector('.usersList');
+            target.innerHTML = target.innerHTML + li;
+        }
+    })
+})
+
+
+
+ 
